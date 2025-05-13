@@ -14,13 +14,21 @@ public class Exercise71 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String caractere;
-        caractere = String.valueOf(scanner.nextInt());
-        //'a','e', 'i', 'o', 'u', 'y'
-        if (caractere.equals('a') || caractere.equals('e')||caractere.equals('i')||caractere.equals('o') || caractere.equals('u') || caractere.equals('y')) {
-            System.out.println("Le caractère saisi est une voyelle.");
-        // "b","c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"
-        } else if (caractere.equals (caractere.equals('b'))) {
-            System.out.println("Le caractère saisi est une consonne.");
+        System.out.print("Saisir une lettre : ");
+        caractere = scanner.next();
+
+        if (caractere.length() == 1) {
+            char lettre = caractere.charAt(0);
+
+            if (lettre == 'a' || lettre == 'e' || lettre == 'i' || lettre == 'o' || lettre == 'u' || lettre == 'y') {
+                System.out.println("Le caractère saisi est une voyelle.");
+            } else if (lettre > 'a' && lettre <= 'z') {
+                System.out.println("Le caractère saisi est une consonne.");
+            } else {
+                System.out.println("Ce n'est pas une lettre de l'alphabet.");
+            }
+        } else {
+            System.out.println("Veuillez saisir un seul caractère.");
         }
     }
 }
