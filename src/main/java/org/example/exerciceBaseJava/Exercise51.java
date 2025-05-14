@@ -1,4 +1,4 @@
-package org.example;
+package org.example.exerciceBaseJava;
 
 public class Exercise51 {
     public static void main(String[] args) {

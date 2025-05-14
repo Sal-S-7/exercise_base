@@ -1,4 +1,4 @@
-package org.example;
+package org.example.exerciceBaseJava;
 
 import java.util.Scanner;
 
@@ -13,7 +13,7 @@ public class Exercise57 {
         double cote;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Saisir la longueur d'un côté : ");
-        
+
         cote = scanner.nextDouble();
 
         double perimetre = 4 * cote;
