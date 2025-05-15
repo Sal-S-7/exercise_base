@@ -49,9 +49,12 @@ public class Joueur {
     }
 
     public void niveauUp() {
-        niveau++;
-        exp = 0;
-        System.out.println("Le joueur " + nom + " passe au niveau :" + niveau);
+//        if (xprequired > 100) {
+            niveau++;
+            exp = 0;
+            System.out.println("Le joueur " + nom + " passe au niveau :" + niveau);
+//        }
     }
-
 }
+
+

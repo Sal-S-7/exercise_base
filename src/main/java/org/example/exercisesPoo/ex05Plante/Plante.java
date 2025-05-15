@@ -5,6 +5,7 @@ public class Plante {
     private String nom;
     private int hauteur;
     private String couleur;
+    private int circonference;
 
     public Plante(String nom,int hauteur, String couleur) {
         this.nom = nom;
@@ -40,7 +41,8 @@ public class Plante {
     public String toString() {
         return "Mon nom est " + nom + ", je possède une hauteur de : " + hauteur + "cm et " +
                 " une couleur de couleur " + couleur + ".";
+
+        }
     }
-}
 
 
