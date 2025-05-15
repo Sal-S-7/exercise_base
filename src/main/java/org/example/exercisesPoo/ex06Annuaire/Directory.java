@@ -25,7 +25,7 @@ public class Directory {
 
     public Company searchByName(String name) {
         for (Company c : company) {
-            if (c.getName().equalsIgnoreCase(name)) {
+            if (c.getName().equals(name)) {
                 return c;
             }
         }

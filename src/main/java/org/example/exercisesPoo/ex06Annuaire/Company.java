@@ -17,18 +17,6 @@ public class Company {
         return name;
     }
 
-    public int getNumber() {
-        return number;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getSite() {
-        return site;
-    }
-
     @Override
     public String toString() {
         return "\nNom: " + name + "\nNuméro de siret: " + number + "\nAdresse: " + address + "\nSite: " + site;

@@ -23,7 +23,7 @@ public class Menu {
             switch (choice) {
                 case 1:
                     System.out.print("Nom de l'entreprise : ");
-                    String name = scanner.next();
+                    String name = scanner.nextLine();
                     System.out.print("Numéro de siret : ");
                     int number = scanner.nextInt();
                     System.out.print("Adresse : ");
