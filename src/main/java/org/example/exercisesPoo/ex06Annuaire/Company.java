@@ -2,11 +2,11 @@ package org.example.exercisesPoo.ex06Annuaire;
 
 public class Company {
     private String name;
-    private int number;
+    private long number;
     private String address;
     private String site;
 
-    public Company(String name, int number, String address, String site) {
+    public Company(String name, long number, String address, String site) {
         this.name = name;
         this.number = number;
         this.address = address;

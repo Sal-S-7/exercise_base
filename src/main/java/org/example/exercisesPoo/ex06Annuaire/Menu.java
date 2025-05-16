@@ -19,17 +19,19 @@ public class Menu {
             System.out.println("----------------------");
             System.out.print("Votre choix : ");
             choice = scanner.nextInt();
+            scanner.nextLine(); // Consommer la touche entrée
 
             switch (choice) {
                 case 1:
                     System.out.print("Nom de l'entreprise : ");
                     String name = scanner.nextLine();
                     System.out.print("Numéro de siret : ");
-                    int number = scanner.nextInt();
+                    long number = scanner.nextLong();
+                    scanner.nextLine(); // Consommer la touche entrée
                     System.out.print("Adresse : ");
-                    String address = scanner.next();
+                    String address = scanner.nextLine();
                     System.out.print("Site web : ");
-                    String site = scanner.next();
+                    String site = scanner.nextLine();
 
                     Company c = new Company(name, number, address, site);
                     directory.addCompany(c);
@@ -43,6 +45,7 @@ public class Menu {
                 case 3:
                     System.out.print("Nom de l'entreprise à rechercher : ");
                     String search = scanner.next();
+                    scanner.nextLine(); // Consommer la touche entrée
                     Company found = directory.searchByName(search);
                     if (found != null) {
                         System.out.println("Entreprise trouvée :" + found);
@@ -58,6 +61,6 @@ public class Menu {
                 default:
                     System.out.println("Choix invalide.");
             }
-        } while (choice != 0);
+        } while (true);
     }
 }
