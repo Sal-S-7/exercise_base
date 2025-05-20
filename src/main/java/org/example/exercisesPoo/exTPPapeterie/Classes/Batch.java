@@ -35,7 +35,7 @@ package org.example.exercisesPoo.exTPPapeterie.Classes;
 
         @Override
         public String toString() {
-            return super.toString() + " - " + getName() + " - Prix total : " + getPrice() + "€";
+            return super.toString() + " - " + getName() + " - Prix total : " + getPrice() + "€"+ " - Pourcentage : "+ getSale() +"%";
         }
     }
 

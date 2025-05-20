@@ -25,11 +25,12 @@ public class Invoice {
         return total;
     }
 
-    public void displayInvoice() {
+    public String toString() {
         System.out.println("Facture " + numberID + " Client : " + client + " Date : " + date);
         for (Line line : lines) {
             line.showLine();
         }
         System.out.println("TOTAL : " + getTotalPrice() + "€");
+        return null;
     }
 }
