@@ -1,6 +1,4 @@
-package org.example.exerciseDesignPattern.tpPereNoel;
-
-import org.example.exerciseDesignPattern.tpPereNoel.observer.ElfObserver;
+package org.example.exerciseDesignPattern.tpPereNoel.observer;
 
 public class Elf implements ElfObserver {
     private String name;

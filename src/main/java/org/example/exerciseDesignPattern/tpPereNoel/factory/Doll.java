@@ -1,6 +1,12 @@
 package org.example.exerciseDesignPattern.tpPereNoel.factory;
 
-public class Doll implements Toys{
+import org.example.exerciseDesignPattern.tpPereNoel.observer.ElfObserver;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Doll implements Toys {
+
     @Override
     public String getDescription() {
         return "poupée";
@@ -15,4 +21,5 @@ public class Doll implements Toys{
     public String ready() {
         return " est prêt";
     }
+
 }

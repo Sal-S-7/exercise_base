@@ -4,4 +4,5 @@ public class PlushFactory extends ToysFactory {
         public Toys createToy() {
             return new Plush();
         }
+
 }
