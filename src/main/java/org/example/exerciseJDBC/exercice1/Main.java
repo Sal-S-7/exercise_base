@@ -1,5 +1,7 @@
 package org.example.exerciseJDBC.exercice1;
-import org.example.exerciseJDBC.exercice1.utils.ConnectionUtils;
+import org.example.exerciseJDBC.exercice1.classes.AddStudent;
+import org.example.exerciseJDBC.exercice1.classes.Menu;
+
 import java.sql.*;
 import java.util.Scanner;
 

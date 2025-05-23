@@ -1,4 +1,4 @@
-package org.example.exerciseJDBC.exercice1;
+package org.example.exerciseJDBC.exercice1.classes;
 
 import org.example.exerciseJDBC.exercice1.utils.ConnectionUtils;
 
