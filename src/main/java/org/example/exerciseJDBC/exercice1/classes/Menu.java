@@ -10,10 +10,6 @@ public class Menu {
 
     public Menu() throws SQLException {
         Scanner scanner = new Scanner(System.in);
-        Connection connection = null;
-        AddStudent addStudent = new AddStudent();
-        RemoveStudent removeStudent = new RemoveStudent();
-        SearchAllStudents searchAllStudents = new SearchAllStudents();
 
         int choice;
 

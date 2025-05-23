@@ -9,7 +9,7 @@ public class ConnectionUtils {
 
         String url = "jdbc:mysql://localhost:3306/users_demo_ex1";
         String username = "root";
-        String password = "141207";
+        String password = "";
 
         Connection connection = DriverManager.getConnection(url, username, password);
         return connection;
