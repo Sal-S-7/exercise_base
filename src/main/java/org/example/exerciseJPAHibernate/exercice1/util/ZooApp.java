@@ -124,7 +124,7 @@ public class ZooApp {
         String name = scanner.nextLine();
         List<Animals> animals = animalsDAO.findByName(name);
         if (animals.isEmpty()) {
-            System.out.println("Aucun animal trouvé avec le nom « " + name + " ».");
+            System.out.println("Aucun animal trouvé avec le nom ' " + name + " '.");
         } else {
             animals.forEach(System.out::println);
         }
@@ -142,7 +142,7 @@ public class ZooApp {
         }
         List<Animals> animals = animalsDAO.findByDiet(dietType);
         if (animals.isEmpty()) {
-            System.out.println("Aucun animal trouvé avec le régime « " + dietType + " ».");
+            System.out.println("Aucun animal trouvé avec le régime ' " + dietType + " '.");
         } else {
             animals.forEach(System.out::println);
         }
