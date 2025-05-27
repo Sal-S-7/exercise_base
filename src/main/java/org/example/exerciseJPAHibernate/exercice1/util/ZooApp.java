@@ -93,7 +93,7 @@ public class ZooApp {
             System.out.print("Date d’arrivée (AAAA-MM-JJ) : ");
             String inputDate = scanner.nextLine();
             try {
-                LocalDate.parse(inputDate); // valider le format ISO
+                LocalDate.parse(inputDate);
                 arrivalDate = inputDate;
             } catch (DateTimeParseException e) {
                 System.out.println("Format de date incorrect, merci d’utiliser AAAA-MM-JJ.");
