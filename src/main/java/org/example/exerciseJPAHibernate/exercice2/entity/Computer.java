@@ -15,17 +15,30 @@ public class Computer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Setter
+
     private String model;
 
-    @Setter
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "identification_id")
     private Identification identification;
+
+
+    @ManyToOne
+    @JoinColumn(name = "processor_id")
+    private Processor processor;
+
+
+    @ManyToOne
+    @JoinColumn(name = "os_id")
+    private OperatingSystem operatingSystem;
+
+    @ManyToOne
+    @JoinColumn(name = "graphiccard_id")
+    private GraphicCard graphicCard;
 
     public Computer(String model, Identification identification) {
         this.model = model;
         this.identification = identification;
     }
-
 }

@@ -16,10 +16,9 @@ public class Identification {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Setter
+
     private String macAddress;
 
-    @Setter
     private String ipAddress;
 
     public Identification(String macAddress, String ipAddress) {
