@@ -1,5 +1,6 @@
 package org.example.exerciseJPAHibernate.exercice3;
 
+import org.example.exerciseJPAHibernate.exercice3.dao.ProductDao;
 import org.example.exerciseJPAHibernate.exercice3.utils.ProductManager;
 
 import javax.persistence.EntityManager;
@@ -12,7 +13,8 @@ public class Main {
         EntityManager em = emf.createEntityManager();
 
         try {
-            ProductManager manager = new ProductManager(em);
+            ProductDao productDao = new ProductDao(em);
+            ProductManager manager = new ProductManager(productDao);
             manager.menu();
         } finally {
             em.close();

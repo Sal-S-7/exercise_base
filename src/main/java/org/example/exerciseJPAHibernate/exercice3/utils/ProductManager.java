@@ -1,20 +1,20 @@
 package org.example.exerciseJPAHibernate.exercice3.utils;
 
+import org.example.exerciseJPAHibernate.exercice3.dao.ProductDao;
 import org.example.exerciseJPAHibernate.exercice3.entity.*;
 
-import javax.persistence.EntityManager;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class ProductManager {
 
-    private final EntityManager em;
+    private final ProductDao productDao;
     private final Scanner scanner = new Scanner(System.in);
     private final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-    public ProductManager(EntityManager em) {
-        this.em = em;
+    public ProductManager(ProductDao productDao) {
+        this.productDao = productDao;
     }
 
     public void menu() {
@@ -125,15 +125,13 @@ public class ProductManager {
         };
 
         if (product != null) {
-            em.getTransaction().begin();
-            em.persist(product);
-            em.getTransaction().commit();
+            productDao.save(product);
             System.out.println("Produit ajouté avec succès.");
         }
     }
 
     private void listProducts() {
-        List<Product> products = em.createQuery("SELECT p FROM Product p", Product.class).getResultList();
+        List<Product> products = productDao.findAll();
         if (products.isEmpty()) {
             System.out.println("Aucun produit trouvé.");
         } else {
@@ -153,7 +151,7 @@ public class ProductManager {
             return;
         }
 
-        Product product = em.find(Product.class, id);
+        Product product = productDao.findById(id);
         if (product == null) {
             System.out.println("Produit introuvable.");
             return;
@@ -215,9 +213,7 @@ public class ProductManager {
             }
         }
 
-        em.getTransaction().begin();
-        em.merge(product);
-        em.getTransaction().commit();
+        productDao.update(product);
         System.out.println("Produit mis à jour.");
     }
 
@@ -231,15 +227,13 @@ public class ProductManager {
             return;
         }
 
-        Product product = em.find(Product.class, id);
+        Product product = productDao.findById(id);
         if (product == null) {
             System.out.println("Produit introuvable.");
             return;
         }
 
-        em.getTransaction().begin();
-        em.remove(product);
-        em.getTransaction().commit();
+        productDao.delete(product);
         System.out.println("Produit supprimé.");
     }
 
