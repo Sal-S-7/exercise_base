@@ -3,6 +3,8 @@ package org.example.exerciseJPAHibernate.exercice2.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -37,8 +39,16 @@ public class Computer {
     @JoinColumn(name = "graphiccard_id")
     private GraphicCard graphicCard;
 
+    @ManyToMany(mappedBy = "computers")
+    private List<Project> projects = new ArrayList<>();
+
+
     public Computer(String model, Identification identification) {
         this.model = model;
         this.identification = identification;
     }
+
+
+
+
 }

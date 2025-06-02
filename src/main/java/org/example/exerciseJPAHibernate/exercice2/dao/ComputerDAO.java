@@ -1,6 +1,7 @@
 package org.example.exerciseJPAHibernate.exercice2.dao;
 
 import org.example.exerciseJPAHibernate.exercice2.entity.Computer;
+import org.example.exerciseJPAHibernate.exercice2.entity.Project;
 
 import javax.persistence.*;
 import java.util.List;
@@ -32,6 +33,56 @@ public class ComputerDAO {
         em.merge(computer);
         et.commit();
         em.close();
+    }
+
+    public void associateComputerWithProjects(int computerId, List<Integer> projectIds) {
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+
+        Computer computer = em.find(Computer.class, computerId);
+        if (computer != null) {
+            for (Integer projectId : projectIds) {
+                Project project = em.find(Project.class, projectId);
+                if (project != null) {
+                    project.addComputer(computer);
+                }
+            }
+        }
+
+        em.getTransaction().commit();
+        em.close();
+    }
+
+    public void dissociateComputerFromProjects(int computerId, List<Integer> projectIds) {
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+
+        Computer computer = em.find(Computer.class, computerId);
+        if (computer != null) {
+            for (Integer projectId : projectIds) {
+                Project project = em.find(Project.class, projectId);
+                if (project != null) {
+                    project.removeComputer(computer);
+                }
+            }
+        }
+
+        em.getTransaction().commit();
+        em.close();
+    }
+
+    public List<Project> getProjectsByComputerId(int computerId) {
+        EntityManager em = emf.createEntityManager();
+        Computer computer = em.find(Computer.class, computerId);
+        List<Project> projects = null;
+
+        if (computer != null) {
+            projects = computer.getProjects();
+            projects.size();
+        }
+
+        em.close();
+        return projects;
     }
 
 }

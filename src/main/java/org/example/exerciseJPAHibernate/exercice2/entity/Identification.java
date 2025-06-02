@@ -25,5 +25,4 @@ public class Identification {
         this.macAddress = macAddress;
         this.ipAddress = ipAddress;
     }
-
 }
