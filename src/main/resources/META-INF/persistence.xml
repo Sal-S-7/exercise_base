@@ -8,7 +8,7 @@
 
              version="3.0">
 
-    <persistence-unit name="ex2_computer">
+    <persistence-unit name="tp_product">
 
         <description>Persistence pour demo jpa a M2i</description>
 
@@ -18,7 +18,7 @@
         <properties>
 
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ex2_computer"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/tp_product"/>
 
             <property name="javax.persistence.jdbc.user" value="root"/>
 
