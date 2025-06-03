@@ -8,17 +8,16 @@
 
              version="3.0">
 
-    <persistence-unit name="tp_product">
+    <persistence-unit name="ex1_produit">
 
         <description>Persistence pour demo jpa a M2i</description>
 
-        <class>org.example.exerciseJPAHibernate.exercice2.entity.Computer</class>
-        <class>org.example.exerciseJPAHibernate.exercice2.entity.Identification</class>
+        <class>org.example.exerciseHibernate.exercice1.entity.Produit</class>
 
         <properties>
 
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/tp_product"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ex1_produit"/>
 
             <property name="javax.persistence.jdbc.user" value="root"/>
 
